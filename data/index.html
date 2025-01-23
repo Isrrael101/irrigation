@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Sistema de Riego</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Sistema de Riego Inteligente</h1>
+
+        <div class="card">
+            <h2>Métricas en Tiempo Real</h2>
+            <div class="metric-grid">
+                <div class="metric">
+                    <div class="metric-label">Temperatura</div>
+                    <div class="metric-value"><span id="temperatura">--</span>°C</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-label">Humedad Aire</div>
+                    <div class="metric-value"><span id="humedad_aire">--</span>%</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-label">Humedad Suelo</div>
+                    <div class="metric-value"><span id="humedad_suelo">--</span>%</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>Gráficas de Monitoreo</h2>
+            <div class="chart-container">
+                <canvas id="tempChart"></canvas>
+            </div>
+            <div class="chart-container">
+                <canvas id="humChart"></canvas>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>Control de Riego</h2>
+            <button id="toggleButton" class="button">Activar Bomba</button>
+            <div id="bombaStatus" class="status inactive">Bomba Inactiva</div>
+            <div id="alertBox" class="alert"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
